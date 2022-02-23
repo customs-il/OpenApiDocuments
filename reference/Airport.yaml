@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: Airport
+  version: '1.0'
+  description: ''
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /flight:
+    post:
+      summary: ''
+      operationId: post-flights
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FlightData'
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+    parameters: []
+components:
+  schemas:
+    FlightData:
+      title: FlightData
+      type: object
+      properties:
+        id:
+          type: integer
+        Ttile:
+          type: string
+          maxLength: 1000
+        Childs:
+          type: array
+          items:
+            type: object
+      required:
+        - id
+        - Ttile

@@ -1,5 +1,0 @@
-title: TestModel
-type: object
-properties:
-  id:
-    type: string
