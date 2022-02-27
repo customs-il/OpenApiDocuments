@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: LicenseConfirmation_Internal
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /confirmationRequests:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-confirmationRequest
+      parameters:
+        - schema:
+            type: integer
+            minimum: 1
+          in: query
+          name: number
+          description: מספר בקשה
+        - schema:
+            type: integer
+          in: query
+          name: typeId
+          description: סוג רשיון
+    parameters: []
+components:
+  schemas: {}
