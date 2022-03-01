@@ -5,7 +5,7 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /confirmationRequests:
+  /confirmationRequestsSearch:
     get:
       summary: Your GET endpoint
       tags: []
@@ -19,10 +19,56 @@ paths:
           name: number
           description: מספר בקשה
         - schema:
-            type: integer
+            type: number
           in: query
           name: typeId
           description: סוג רשיון
+        - schema:
+            type: number
+          in: query
+          name: authorityId
+          description: גורם מאשר
+        - schema:
+            type: number
+          in: query
+          name: secondTypeId
+          description: סוג רשיון משני
+        - schema:
+            type: number
+          in: query
+          name: customsItemId
+          description: פרט מכס
+        - schema:
+            type: number
+          in: query
+          name: exemptCustomsItemId
+          description: 'סיווג משני '
+        - schema:
+            type: number
+          in: query
+          name: customerId
+          description: קוד לקוח
+        - schema:
+            type: number
+          in: query
+          name: confirmationRelation
+          description: תקפות רישיון
+        - schema:
+            type: string
+          in: query
+          name: requestDate
+          description: תאריך בקשה
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              example-1:
+                value: {}
+        description: ''
+      description: get confirmation Requests Search
     parameters: []
 components:
   schemas: {}
